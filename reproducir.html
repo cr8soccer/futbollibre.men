@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ver en vivo | Fútbol Libre TV</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/img/logo-futbol-libre.webp" type="image/webp" sizes="96x96">
+  <style>
+    html, body {
+      background: #000;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #player {
+      background: #000;
+      border: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      inset: 0;
+    }
+    .back-btn {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-family: system-ui, sans-serif;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(22, 101, 52, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="back-btn">← Volver a Fútbol Libre</a>
+  <iframe id="player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  <script>
+    (function() {
+      var url = new URLSearchParams(window.location.search).get("url");
+      var player = document.getElementById("player");
+      if (url && player) {
+        player.src = decodeURIComponent(url);
+      }
+    })();
+  </script>
+</body>
+</html>

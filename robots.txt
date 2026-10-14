@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /reproducir.html
+
+Sitemap: https://futbollibre.men/sitemap.xml
